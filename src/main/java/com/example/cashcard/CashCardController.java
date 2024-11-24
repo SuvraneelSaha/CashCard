@@ -38,3 +38,12 @@ public class CashCardController {
     }
 
 }
+
+/*
+Searching through the output, we find this line:
+
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'example.cashcard.CashCardRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Clues such as NoSuchBeanDefinitionException, No qualifying bean, and expected at least 1 bean which qualifies as autowire candidate tell us that Spring is trying to find a properly configured class to provide during the dependency injection phase of Auto Configuration, but none qualify.
+
+We can satisfy this DI requirement by extending the CrudRepository.
+ */
